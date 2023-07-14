@@ -1,50 +1,44 @@
-First you install python3
+# First you install python3
 
-Also confirm pip is working fine
+# Also confirm pip is working fine
 
-To create a virtual environment and install packages within it, you can follow these steps:
+# To create a virtual environment and install packages within it, you can follow these steps:
 
-Install the virtualenv package (if not already installed):
+# Install the virtualenv package (if not already installed):
+pip install virtualenv
 
-=> pip install virtualenv
+# Create a new virtual environment:
+virtualenv myenv
 
-Create a new virtual environment:
+# This command creates a new directory named myenv, which will contain the isolated environment.
 
-=> virtualenv myenv
+# Activate the virtual environment:
 
-This command creates a new directory named myenv, which will contain the isolated environment.
+# On Linux/macOS:
+source myenv/bin/activate
 
-Activate the virtual environment:
+# On Windows (Command Prompt):
+myenv\Scripts\activate.bat
 
-On Linux/macOS:
+# or (PowerShell):
+myenv\Scripts\Activate.ps1
 
-=> source myenv/bin/activate
+# Once activated, your command prompt or terminal should indicate that you are now using the virtual environment.
 
-On Windows (Command Prompt):
+# Install the packages within the virtual environment:
+pip install -r cryptographic_requirements.txt
 
-=> myenv\Scripts\activate.bat
+# This command will install the packages listed in the cryptographic_requirements.txt file within the virtual environment.
 
-or (PowerShell):
+# By using a virtual environment, you can avoid potential conflicts and ensure that the project dependencies are isolated from the system-wide Python installation.
 
-=> myenv\Scripts\Activate.ps1
+# Also we need to get postgresql latest version and the pgadmin tool downloaded
 
-Once activated, your command prompt or terminal should indicate that you are now using the virtual environment.
+# To install the latest version of PostgreSQL and the pgAdmin tool, you can follow the steps below based on your operating system.
 
-Install the packages within the virtual environment:
+# Ubuntu:
 
-=> pip install -r cryptographic_requirements.txt
-
-This command will install the packages listed in the cryptographic_requirements.txt file within the virtual environment.
-
-By using a virtual environment, you can avoid potential conflicts and ensure that the project dependencies are isolated from the system-wide Python installation.
-
-Also we need to get postgresql latest version and the pgadmin tool downloaded
-
-To install the latest version of PostgreSQL and the pgAdmin tool, you can follow the steps below based on your operating system.
-
-Ubuntu:
-
-Add the PostgreSQL:
+# Add the PostgreSQL:
 
 => sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 => wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -52,7 +46,7 @@ Add the PostgreSQL:
 => sudo apt-get -y install postgresql
 
 
-Install pgAdmin:
+# Install pgAdmin:
 
 #
 # Setup the repository
@@ -80,19 +74,19 @@ sudo apt install pgadmin4-web
 # Configure the webserver, if you installed pgadmin4-web:
 sudo /usr/pgadmin4/bin/setup-web.sh
 
-During the installation, you will be prompted to set a password for the PostgreSQL database superuser (typically postgres). Remember this password as you will need it to access the database server.
+# During the installation, you will be prompted to set a password for the PostgreSQL database superuser (typically postgres). Remember this password as you will need it to access the database server.
 
-macOS:
+# macOS:
 
-Install PostgreSQL and pgAdmin using Homebrew:
+# Install PostgreSQL and pgAdmin using Homebrew:
 
 => brew install postgresql pgadmin4
 
-Homebrew will handle the installation and setup of both PostgreSQL and pgAdmin for you.
+# Homebrew will handle the installation and setup of both PostgreSQL and pgAdmin for you.
 
-Windows:
+# Windows:
 
-Download the PostgreSQL installer from the official website:
+# Download the PostgreSQL installer from the official website:
 
 Go to the PostgreSQL download page: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 Choose the version appropriate for your system (e.g., Windows x86-64) and click the download link.
