@@ -74,6 +74,13 @@ sudo apt install pgadmin4-web
 # Configure the webserver, if you installed pgadmin4-web:
 sudo /usr/pgadmin4/bin/setup-web.sh
 
+# To access pgAdmin 4 from your web browser, follow these steps:
+
+If the URL http://localhost/pgadmin4 or http://127.0.0.1/pgadmin4 doesn't work,
+
+=> sudo systemctl start pgadmin4
+
+
 # During the installation, you will be prompted to set a password for the PostgreSQL database superuser (typically postgres). Remember this password as you will need it to access the database server.
 
 # macOS:
