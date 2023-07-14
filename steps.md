@@ -37,3 +37,5 @@ Install the packages within the virtual environment:
 This command will install the packages listed in the cryptographic_requirements.txt file within the virtual environment.
 
 By using a virtual environment, you can avoid potential conflicts and ensure that the project dependencies are isolated from the system-wide Python installation.
+
+Also we need to get postgresql latest version and the pgadmin tool downloaded
