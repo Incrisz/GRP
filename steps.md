@@ -1,3 +1,7 @@
+First you install python3
+
+Also confirm pip is working fine
+
 To create a virtual environment and install packages within it, you can follow these steps:
 
 Install the virtualenv package (if not already installed):
