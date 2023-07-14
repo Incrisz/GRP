@@ -8,6 +8,8 @@
 pip install virtualenv
 
 # Create a new virtual environment:
+sudo apt install python3-virtualenv
+
 virtualenv myenv
 
 # This command creates a new directory named myenv, which will contain the isolated environment.
@@ -41,8 +43,11 @@ pip install -r cryptographic_requirements.txt
 # Add the PostgreSQL:
 
 => sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
 => wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
 => sudo apt-get update
+
 => sudo apt-get -y install postgresql
 
 
@@ -79,6 +84,8 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 If the URL http://localhost/pgadmin4 or http://127.0.0.1/pgadmin4 doesn't work,
 
 => sudo systemctl start pgadmin4
+sudo systemctl status postgresql
+
 
 
 # During the installation, you will be prompted to set a password for the PostgreSQL database superuser (typically postgres). Remember this password as you will need it to access the database server.
